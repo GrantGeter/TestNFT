@@ -1,7 +1,7 @@
-import * as THREE from './build/three.module.js'
-import { OrbitControls } from './jsm/controls/OrbitControls.js'
-import { GUI } from './jsm/libs/dat.gui.module.js'
-import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
+import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 const params = {
     color: '#ffffff'
@@ -25,7 +25,7 @@ let model;
 
 const loader = new GLTFLoader();
 loader.load(
-    './18th-century-oilan/source/OilCan.glb',
+    '../18th-century-oilan/source/OilCan.glb',
     function (gltf) {
         model = gltf.scene
         scene.add(model);
