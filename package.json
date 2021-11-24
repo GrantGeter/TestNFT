@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/GrantGeter/testnfttest#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "three": "^0.134.0"
   }
