@@ -4,6 +4,11 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
+import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
+
+
+
+
 const params = {
     color: '#ffffff'
 };
@@ -12,7 +17,12 @@ const scene = new THREE.Scene()
 scene.background = new THREE.Color(params.color);
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
+// camera.position.set(10, 10, 10);
 camera.position.z = 2
+
+const tween = new TWEEN.Tween({ x: 0, y: 0, z: 0 })
+tween.easing(TWEEN.Easing.Quadratic.InOut)
+tween.to({ x: 10, y: 0, z: 10 }, 1000)
 
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
@@ -30,6 +40,7 @@ loader.load(
     function (gltf) {
         model = gltf.scene
         scene.add(model);
+        tween.start();
     }, undefined,
     function (error) {
         console.error(error);
@@ -57,7 +68,9 @@ const spotLightHelper4 = new THREE.SpotLightHelper(spotLight4, 0x804080);
 const ambLight = new THREE.AmbientLight(0x404040, 50); // soft white light
 // scene.add(ambLight);
 
-
+tween.onUpdate(function (object) {
+    camera.position.set(object.x, object.y, object.z);
+})
 
 window.addEventListener(
     'resize',
@@ -83,6 +96,7 @@ function animate() {
         // model.rotation.x += 0.01
         model.rotation.y += 0.01
     }
+    TWEEN.update()
     controls.update()
     render()
 }
