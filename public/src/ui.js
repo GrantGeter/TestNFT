@@ -24,7 +24,13 @@ window.onclick = function (event) {
     if (event.target == canvas) {
         // colorSelector.style.display = "none";
         colorSelector.classList.remove('open');
+    }
+}
 
+window.ontouchend = function (event) {
+    if (event.target == canvas) {
+        // colorSelector.style.display = "none";
+        colorSelector.classList.remove('open');
     }
 }
 
