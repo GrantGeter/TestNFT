@@ -5,12 +5,7 @@
     <meta charset="utf-8">
     <title>Three.js TestNFT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            overflow: hidden;
-            margin: 0px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script type="importmap">
         {
           "imports": {
@@ -26,8 +21,29 @@
 </head>
 
 <body>
+    <!-- Prod -->
     <script type="module" src="./dist/main.js"></script>
+    <!-- Dev -->
     <!-- <script type="module" src="./src/index.js"></script> -->
+    <div id="canvasContainer">
+        <div id="overlay">
+            <img src="./assets/sosouthlogocenter.png" id="openSettings" />
+        </div>
+        <div class="colors">
+            <button class="color" id="cadffff"></button>
+            <button class="color" id="ce4c1f9"></button>
+            <button class="color" id="cecc30b"></button>
+            <button class="color" id="c2c423f"></button>
+            <button class="color" id="ceb8258"></button>
+            <button class="color" id="cf26419"></button>
+            <button class="color" id="c9067c6"></button>
+            <button class="color" id="cf5e2c8"></button>
+            <button class="color" id="c201e50"></button>
+            <button class="color" id="c000000"></button>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <script type="module" src="./src/ui.js"></script>
 </body>
 
 </html>
