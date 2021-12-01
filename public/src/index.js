@@ -36,7 +36,7 @@ const init = () => {
 
     const loader = new GLTFLoader();
     loader.load(
-        '../assets/kekeframe20.glb',
+        '../assets/kekeplaqueVer3blu.glb',
         (gltf) => {
             model = gltf.scene
             loading.classList.remove('active');
@@ -61,20 +61,29 @@ const init = () => {
 
 
 const addLights = () => {
-    const spotLight1 = new THREE.SpotLight(0x404040, 5, 0);
-    const spotLight3 = new THREE.SpotLight(0x404040, 5, 0);
-    const spotLight2 = new THREE.SpotLight(0x404040, 5, 0);
+    const light1 = new THREE.PointLight(0x404040, 5);
+    const light2 = new THREE.PointLight(0x404040, 5);
+    const light3 = new THREE.PointLight(0x404040, 5);
 
-    spotLight1.position.set(2.504, 5.546, 2.124);
-    spotLight1.rotation.set(108.30, 50.45, -117.18);
+    const ambLight = new THREE.AmbientLight(0x404040, 2);
 
-    spotLight2.position.set(-1.233, 3.281, -4.877);
-    spotLight2.rotation.set(108.10, 50.45, -117.18);
 
-    spotLight3.position.set(-4.790, 6.858, 2.499);
-    spotLight3.rotation.set(108.10, 50.45, -117.18);
+    light1.position.set(2.504, 5.546 * 2, 2.124);
+    // light1.rotation.set(108.30, 50.45, -117.18);
 
-    scene.add(spotLight1, spotLight2, spotLight3);
+    light2.position.set(-1.233, 3.281, -4.877);
+    // light2.rotation.set(108.10, 50.45, -117.18);
+
+    light3.position.set(-4.790, 6.858 * 2, 2.499);
+    // light3.rotation.set(108.10, 50.45, -117.18);
+
+    scene.add(light1, light2, light3, ambLight);
+
+    const lightHelper1 = new THREE.PointLightHelper(light1);
+    const lightHelper2 = new THREE.PointLightHelper(light2);
+    const lightHelper3 = new THREE.PointLightHelper(light3);
+
+    scene.add(lightHelper1, lightHelper2, lightHelper3);
 }
 
 
