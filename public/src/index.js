@@ -33,6 +33,7 @@ const init = () => {
 
     controls.maxDistance = 20;
     controls.minDistance = 2;
+    controls.enablePan = false;
 
     const loader = new GLTFLoader();
     loader.load(

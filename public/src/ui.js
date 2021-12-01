@@ -38,17 +38,25 @@ const setBackgroundColor = (color) => {
 
 buttons.forEach(button => button.addEventListener('click', () => setBackgroundColor(button.id.replace('c', '#'))))
 
-let camtween;
 
 const resetCamera = () => {
-    camtween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z })
-    console.log(camtween);
-    // camera.position.set(0, 0, 10);
-    camtween.easing(TWEEN.Easing.Exponential.InOut)
-    camtween.to({ x: 0, y: 0, z: 10 }, 1500)
-    camtween.start();
-    camtween.onUpdate((object) => {
+    const campostween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z })
+    const camrottween = new TWEEN.Tween({ x: camera.rotation.x, y: camera.rotation.y, z: camera.rotation.z })
+    campostween.easing(TWEEN.Easing.Exponential.InOut)
+    camrottween.easing(TWEEN.Easing.Exponential.InOut)
+
+    campostween.to({ x: 0, y: 2, z: 10 }, 1500)
+    camrottween.to({ x: 0, y: 0, z: 0 }, 1500)
+
+    campostween.start();
+    camrottween.start();
+
+    campostween.onUpdate((object) => {
         camera.position.set(object.x, object.y, object.z);
+    })
+
+    camrottween.onUpdate((object) => {
+        camera.rotation.set(object.x, object.y, object.z);
     })
 }
 
