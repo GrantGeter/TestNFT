@@ -3,6 +3,34 @@ body {
     margin: 0px;
 }
 
+.reset {
+    position: absolute;
+    font-size: 3.75rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    color: #589fe5;
+    opacity: 0.6;
+    z-index: 101;
+    top: 9.5rem;
+    right: 0;
+    margin-right: 0.3rem;
+    transition: transform 500ms ease-in-out;
+    transform: translateX(110%);
+    border: none;
+    background: none;
+}
+
+.reset:hover {
+    font-size: 4.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    transition: ease-in-out 100ms;
+}
+
+.reset.open {
+    transform: translateX(0px);
+}
+
 #canvasContainer {
     position: relative;
 }
@@ -72,6 +100,17 @@ body {
 #canvas {
     top: 0;
     left: 0;
+}
+
+.loading {
+    display: none;
+    background-color: #000000;
+    width: 100vw;
+    height: 100vh;
+}
+
+.loading.active {
+    display: block;
 }
 
 #cadffff {
