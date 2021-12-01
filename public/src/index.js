@@ -68,22 +68,16 @@ const addLights = () => {
     const ambLight = new THREE.AmbientLight(0x404040, 2);
 
 
-    light1.position.set(2.504, 5.546 * 2, 2.124);
+    light1.position.set(2.504, 5.546, 2.124);
     // light1.rotation.set(108.30, 50.45, -117.18);
 
     light2.position.set(-1.233, 3.281, -4.877);
     // light2.rotation.set(108.10, 50.45, -117.18);
 
-    light3.position.set(-4.790, 6.858 * 2, 2.499);
+    light3.position.set(-4.790, 6.858, 2.499);
     // light3.rotation.set(108.10, 50.45, -117.18);
 
     scene.add(light1, light2, light3, ambLight);
-
-    const lightHelper1 = new THREE.PointLightHelper(light1);
-    const lightHelper2 = new THREE.PointLightHelper(light2);
-    const lightHelper3 = new THREE.PointLightHelper(light3);
-
-    scene.add(lightHelper1, lightHelper2, lightHelper3);
 }
 
 
