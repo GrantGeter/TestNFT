@@ -14,11 +14,20 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const canvasDom = document.getElementById('canvas');
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvasDom })
 const controls = new OrbitControls(camera, renderer.domElement)
+const tween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z });
 
 const loading = document.getElementsByClassName('loading')[0];
 
-
 let model;
+window.onload = (event) => {
+    setTimeout(() => {
+        if (model) {
+            loading.classList.remove('active');
+            tween.start();
+        }
+    }, 5000)
+};
+
 
 
 const init = () => {
@@ -40,13 +49,9 @@ const init = () => {
         '../assets/kekeplaqueVer3blu.glb',
         (gltf) => {
             model = gltf.scene
-            loading.classList.remove('active');
-            const tween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z });
             tween.easing(TWEEN.Easing.Exponential.InOut)
             tween.to({ x: 0, y: 0, z: 10 }, 1500)
             scene.add(model);
-            tween.delay(2000);
-            tween.start();
             tween.onUpdate((object) => {
                 camera.position.set(object.x, object.y, object.z);
             })

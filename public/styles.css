@@ -35,7 +35,7 @@ body {
     position: relative;
 }
 
-#canvasContainer canvas, #overlay, .colors {
+#canvasContainer canvas, #overlay, .colors, .loading {
     position: absolute;
 }
 
@@ -51,7 +51,7 @@ body {
     transition: ease 500ms;
 }
 
-#overlay, .colors {
+#overlay, .colors, .loading {
     top: 0;
     right: 0;
     z-index: 100;
@@ -103,7 +103,7 @@ body {
 }
 
 .loading {
-    display: none;
+    visibility: hidden;
     background-color: #000000;
     width: 100vw;
     height: 100vh;
@@ -111,7 +111,10 @@ body {
 }
 
 .loading.active {
-    display: block;
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #cadffff {
