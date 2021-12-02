@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import { SpotLight } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { TWEEN } from 'three/examples/jsm/libs/tween.module.min';
@@ -42,7 +41,6 @@ const init = () => {
 
     controls.maxDistance = 20;
     controls.minDistance = 2;
-    console.log(controls.target);
 
     const loader = new GLTFLoader();
     loader.load(
