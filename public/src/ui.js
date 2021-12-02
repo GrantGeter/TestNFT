@@ -1,4 +1,4 @@
-import { camera, scene } from './index.js';
+import { camera, controls, scene } from './index.js';
 import * as THREE from 'three'
 import { TWEEN } from 'three/examples/jsm/libs/tween.module.min';
 
@@ -40,23 +40,33 @@ buttons.forEach(button => button.addEventListener('click', () => setBackgroundCo
 
 
 const resetCamera = () => {
-    const campostween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z })
-    const camrottween = new TWEEN.Tween({ x: camera.rotation.x, y: camera.rotation.y, z: camera.rotation.z })
-    campostween.easing(TWEEN.Easing.Exponential.InOut)
-    camrottween.easing(TWEEN.Easing.Exponential.InOut)
+    const camPosTween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z })
+    const camRotTween = new TWEEN.Tween({ x: camera.rotation.x, y: camera.rotation.y, z: camera.rotation.z })
+    const camTarTween = new TWEEN.Tween(controls.target)
 
-    campostween.to({ x: 0, y: 2, z: 10 }, 1500)
-    camrottween.to({ x: 0, y: 0, z: 0 }, 1500)
+    camPosTween.easing(TWEEN.Easing.Exponential.InOut)
+    camRotTween.easing(TWEEN.Easing.Exponential.InOut)
+    camTarTween.easing(TWEEN.Easing.Exponential.InOut)
 
-    campostween.start();
-    camrottween.start();
 
-    campostween.onUpdate((object) => {
+    camPosTween.to({ x: 0, y: 2, z: 10 }, 1500)
+    camRotTween.to({ x: 0, y: 0, z: 0 }, 1500)
+    camTarTween.to({ x: 0, y: 0, z: 0 }, 1500)
+
+    camPosTween.start();
+    camRotTween.start();
+    camTarTween.start();
+
+    camPosTween.onUpdate((object) => {
         camera.position.set(object.x, object.y, object.z);
     })
 
-    camrottween.onUpdate((object) => {
+    camRotTween.onUpdate((object) => {
         camera.rotation.set(object.x, object.y, object.z);
+    })
+
+    camTarTween.onUpdate((object) => {
+        controls.target.set(object.x, object.y, object.z);
     })
 }
 

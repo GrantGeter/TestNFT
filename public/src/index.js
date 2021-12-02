@@ -42,7 +42,7 @@ const init = () => {
 
     controls.maxDistance = 20;
     controls.minDistance = 2;
-    controls.enablePan = false;
+    console.log(controls.target);
 
     const loader = new GLTFLoader();
     loader.load(
@@ -121,4 +121,5 @@ animate();
 export {
     scene,
     camera,
+    controls
 }
