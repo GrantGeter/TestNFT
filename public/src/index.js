@@ -44,7 +44,7 @@ const init = () => {
 
     const loader = new GLTFLoader();
     loader.load(
-        '../assets/kekeplaqueVer3blu.glb',
+        '../assets/kekeframewithtexturesnewSSlogover2.glb',
         (gltf) => {
             model = gltf.scene
             tween.easing(TWEEN.Easing.Exponential.InOut)
