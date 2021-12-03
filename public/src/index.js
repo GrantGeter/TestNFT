@@ -18,14 +18,23 @@ const tween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: c
 const loading = document.getElementsByClassName('loading')[0];
 
 let model;
-window.onload = (event) => {
+// window.onload = (event) => {
+// setTimeout(() => {
+//     if (model) {
+//         loading.classList.remove('active');
+//         tween.start();
+//     }
+// }, 5000)
+// };
+
+document.addEventListener("DOMContentLoaded", (event) => {
     setTimeout(() => {
         if (model) {
             loading.classList.remove('active');
             tween.start();
         }
     }, 5000)
-};
+})
 
 
 
