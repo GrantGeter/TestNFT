@@ -117,7 +117,7 @@ const animate = () => {
     render()
 }
 
-function render() {
+const render = () => {
     renderer.render(scene, camera)
 }
 
@@ -127,5 +127,6 @@ animate();
 export {
     scene,
     camera,
-    controls
+    controls,
+    TWEEN
 }
