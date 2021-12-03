@@ -1,4 +1,4 @@
-import { camera, controls, scene, TWEEN } from './index.js';
+import { camera, controls, scene, TWEEN, THREE } from './index.js';
 
 let colorSelector = document.getElementsByClassName("colors")[0];
 let reset = document.getElementsByClassName('reset')[0];
@@ -30,7 +30,7 @@ window.ontouchend = (event) => {
 const buttons = document.querySelectorAll('.color')
 
 const setBackgroundColor = (color) => {
-    scene.background = color
+    scene.background = new THREE.Color(color);
 }
 
 buttons.forEach(button => button.addEventListener('click', () => setBackgroundColor(button.id.replace('c', '#'))))

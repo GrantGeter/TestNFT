@@ -59,11 +59,11 @@ const init = () => {
 
 
 const addLights = () => {
-    const light1 = new THREE.PointLight(0x404040, 5);
-    const light2 = new THREE.PointLight(0x404040, 5);
-    const light3 = new THREE.PointLight(0x404040, 5);
+    const light1 = new THREE.PointLight(0x404040, 50);
+    const light2 = new THREE.PointLight(0x404040, 50);
+    const light3 = new THREE.PointLight(0x404040, 50);
 
-    const ambLight = new THREE.AmbientLight(0x404040, 2);
+    const ambLight = new THREE.AmbientLight(0x404040, 20);
 
 
     light1.position.set(2.504, 5.546, 2.124);
@@ -114,5 +114,6 @@ export {
     scene,
     camera,
     controls,
-    TWEEN
+    TWEEN,
+    THREE
 }
