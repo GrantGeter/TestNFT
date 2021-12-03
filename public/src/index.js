@@ -27,12 +27,9 @@ let model;
 // }, 5000)
 // };
 
-document.addEventListener("DOMContentLoaded", (event) => {
-    setTimeout(() => {
-        loading.classList.remove('active');
-        tween.start();
-    }, 5000)
-})
+// document.addEventListener("DOMContentLoaded", (event) => {
+
+// })
 
 
 
@@ -60,6 +57,10 @@ const init = () => {
             tween.onUpdate((object) => {
                 camera.position.set(object.x, object.y, object.z);
             })
+            setTimeout(() => {
+                loading.classList.remove('active');
+                tween.start();
+            }, 5000)
         }, () => {
             loading.classList.add('active');
         },
