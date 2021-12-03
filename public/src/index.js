@@ -29,10 +29,8 @@ let model;
 
 document.addEventListener("DOMContentLoaded", (event) => {
     setTimeout(() => {
-        if (model) {
-            loading.classList.remove('active');
-            tween.start();
-        }
+        loading.classList.remove('active');
+        tween.start();
     }, 5000)
 })
 
