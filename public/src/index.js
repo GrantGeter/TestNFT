@@ -34,7 +34,7 @@ const init = () => {
 
     const loader = new GLTFLoader();
     loader.load(
-        '../assets/kekeframewithtexturesnewSSlogover2.glb',
+        '../assets/Slim Thug Gold Coin.glb',
         (gltf) => {
             model = gltf.scene
             tween.easing(TWEEN.Easing.Exponential.InOut)
