@@ -36,7 +36,7 @@ const init = () => {
         (gltf) => {
             model = gltf.scene
             model.updateMatrixWorld(true);
-            console.log(model.scale);
+            console.log(model);
             tween.easing(TWEEN.Easing.Exponential.InOut)
             tween.to({ x: 0, y: 0, z: 10 }, 1500)
             scene.add(model);
