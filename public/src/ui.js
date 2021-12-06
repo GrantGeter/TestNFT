@@ -1,4 +1,4 @@
-import { camera, controls, scene, TWEEN, THREE } from './index.js';
+import { camera, controls, scene, TWEEN, THREE } from './main.js';
 
 let colorSelector = document.getElementsByClassName("colors")[0];
 let reset = document.getElementsByClassName('reset')[0];
