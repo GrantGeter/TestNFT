@@ -36,10 +36,10 @@ const init = () => {
         (gltf) => {
             model = gltf.scene
             model.updateMatrixWorld(true);
-            const boundingBoxHelper = new THREE.Box3Helper(model, 0x00ff00)
+            console.log(model.scale);
             tween.easing(TWEEN.Easing.Exponential.InOut)
             tween.to({ x: 0, y: 0, z: 10 }, 1500)
-            scene.add(model, boundingBoxHelper);
+            scene.add(model);
             tween.onUpdate((object) => {
                 camera.position.set(object.x, object.y, object.z);
             })
