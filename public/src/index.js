@@ -27,7 +27,7 @@ const init = () => {
 
     renderer.gammaOutput = true
 
-    controls.maxDistance = 20;
+    // controls.maxDistance = 20;
     controls.minDistance = 2;
 
     const loader = new GLTFLoader();
