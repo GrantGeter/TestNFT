@@ -40,6 +40,8 @@ body {
 }
 
 #openSettings {
+    margin-top: 0.2rem;
+    margin-right: 0.2rem;
     width: 72px;
     height: 37.33px;
     opacity: 0.1;
@@ -103,18 +105,27 @@ body {
 }
 
 .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     visibility: hidden;
     background-color: #000000;
+    opacity: 0;
     width: 100vw;
     height: 100vh;
     color: #ffffff;
+    transition: ease-out, 1000ms;
+
 }
 
 .loading.active {
     visibility: visible;
+    background-color: #000000;
+    opacity: 100;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: linear 0ms;
 }
 
 .loading img {

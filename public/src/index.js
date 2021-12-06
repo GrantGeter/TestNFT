@@ -34,7 +34,7 @@ const init = () => {
 
     const loader = new GLTFLoader();
     loader.load(
-        '../assets/Slim Thug Gold Coin.glb',
+        '../assets/centered slim gold coin mods.glb',
         (gltf) => {
             model = gltf.scene
             tween.easing(TWEEN.Easing.Exponential.InOut)
@@ -44,8 +44,8 @@ const init = () => {
                 camera.position.set(object.x, object.y, object.z);
             })
             setTimeout(() => {
-                loading.classList.remove('active');
                 tween.start();
+                loading.classList.remove('active');
             }, 5000)
         }, () => {
             loading.classList.add('active');
@@ -59,23 +59,28 @@ const init = () => {
 
 
 const addLights = () => {
-    const light1 = new THREE.PointLight(0x404040, 50);
-    const light2 = new THREE.PointLight(0x404040, 50);
-    const light3 = new THREE.PointLight(0x404040, 50);
+    const light1 = new THREE.PointLight(0x404040, 125);
+    const light2 = new THREE.PointLight(0x404040, 175);
+    const light3 = new THREE.PointLight(0x404040, 200);
 
-    const ambLight = new THREE.AmbientLight(0x404040, 20);
+    const lightHelper1 = new THREE.PointLightHelper(light1, 1, 0xff0000);
+    const lightHelper2 = new THREE.PointLightHelper(light2, 1, 0x00ff00);
+    const lightHelper3 = new THREE.PointLightHelper(light3, 1, 0x0000ff);
 
 
-    light1.position.set(2.504, 5.546, 2.124);
-    // light1.rotation.set(108.30, 50.45, -117.18);
+    const ambLight = new THREE.AmbientLight(0x404040, 2);
 
-    light2.position.set(-1.233, 3.281, -4.877);
-    // light2.rotation.set(108.10, 50.45, -117.18);
+    const axesHelper = new THREE.AxesHelper(20);
 
-    light3.position.set(-4.790, 6.858, 2.499);
-    // light3.rotation.set(108.10, 50.45, -117.18);
+
+    light1.position.set(20.504, 0, 20.124);
+
+    light2.position.set(-10.233, 0, -40.877);
+
+    light3.position.set(-40.790, 0, 20.499);
 
     scene.add(light1, light2, light3, ambLight);
+    // scene.add(lightHelper1, lightHelper2, lightHelper3, axesHelper);
 }
 
 
