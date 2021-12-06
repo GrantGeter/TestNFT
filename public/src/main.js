@@ -37,7 +37,7 @@ const init = () => {
         (gltf) => {
             model = gltf.scene
             tween.easing(TWEEN.Easing.Exponential.InOut)
-            tween.to({ x: 0, y: 0, z: 10 }, 1500)
+            tween.to({ x: 0, y: 0, z: 5 }, 1500)
             scene.add(model);
             tween.onUpdate((object) => {
                 camera.position.set(object.x, object.y, object.z);
