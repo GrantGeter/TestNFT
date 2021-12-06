@@ -8,6 +8,8 @@ const params = {
     color: '#f0f0f0'
 };
 
+window.onload(init)
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
 const canvasDom = document.getElementById('canvas');
@@ -27,7 +29,7 @@ const init = () => {
 
     renderer.gammaOutput = true
 
-    // controls.maxDistance = 20;
+    controls.maxDistance = 20;
     controls.minDistance = 2;
 
     const loader = new GLTFLoader();
@@ -36,11 +38,6 @@ const init = () => {
         (gltf) => {
             model = gltf.scene
             console.log(model);
-            model.traverse((object) => {
-                if (object.name == "Cylinder") {
-                    object.updateMatrix();
-                }
-            })
             tween.easing(TWEEN.Easing.Exponential.InOut)
             tween.to({ x: 0, y: 0, z: 10 }, 1500)
             scene.add(model);
@@ -116,7 +113,6 @@ const render = () => {
     renderer.render(scene, camera)
 }
 
-init();
 animate();
 
 export {
