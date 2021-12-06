@@ -16,6 +16,7 @@ const controls = new OrbitControls(camera, renderer.domElement)
 const tween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z });
 
 const loading = document.getElementsByClassName('loading')[0];
+const canvasContainer = document.getElementById('canvasContainer');
 
 let model;
 
@@ -44,6 +45,7 @@ const init = () => {
             setTimeout(() => {
                 tween.start();
                 loading.classList.remove('active');
+                canvasContainer.classList.remove('hidden');
             }, 5000)
         }, () => {
             loading.classList.add('active');

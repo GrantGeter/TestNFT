@@ -133,6 +133,10 @@ body {
     height: 540px;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 #cadffff {
     background-color: #adffff;
 }
