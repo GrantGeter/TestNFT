@@ -35,7 +35,6 @@ const init = () => {
         '../assets/centered slim gold coin mods.glb',
         (gltf) => {
             model = gltf.scene
-            console.log(model);
             tween.easing(TWEEN.Easing.Exponential.InOut)
             tween.to({ x: 0, y: 0, z: 10 }, 1500)
             scene.add(model);
