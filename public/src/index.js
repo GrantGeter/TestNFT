@@ -35,9 +35,10 @@ const init = () => {
         '../assets/centered slim gold coin mods.glb',
         (gltf) => {
             model = gltf.scene
+            model.updateMatrixWorld(true);
             tween.easing(TWEEN.Easing.Exponential.InOut)
             tween.to({ x: 0, y: 0, z: 10 }, 1500)
-            scene.attach(model);
+            scene.add(model);
             tween.onUpdate((object) => {
                 camera.position.set(object.x, object.y, object.z);
             })
