@@ -23,8 +23,6 @@ const init = () => {
 
     scene.background = new THREE.Color(params.color);
 
-    camera.position.z = 2
-
     renderer.setSize(window.innerWidth, window.innerHeight)
 
     renderer.gammaOutput = true
@@ -39,7 +37,7 @@ const init = () => {
             model = gltf.scene
             tween.easing(TWEEN.Easing.Exponential.InOut)
             tween.to({ x: 0, y: 0, z: 10 }, 1500)
-            scene.add(model);
+            scene.attach(model);
             tween.onUpdate((object) => {
                 camera.position.set(object.x, object.y, object.z);
             })
