@@ -46,7 +46,7 @@ const resetCamera = () => {
     camTarTween.easing(TWEEN.Easing.Exponential.InOut)
 
 
-    camPosTween.to({ x: 0, y: 0, z: 10 }, 1500)
+    camPosTween.to({ x: 0, y: 0, z: 5 }, 1500)
     camRotTween.to({ x: 0, y: 0, z: 0 }, 1500)
     camTarTween.to({ x: 0, y: 0, z: 0 }, 1500)
 
