@@ -36,6 +36,11 @@ const init = () => {
         (gltf) => {
             model = gltf.scene
             console.log(model);
+            model.traverse((object) => {
+                if (object.name == "Cylinder") {
+                    object.updateMatrix();
+                }
+            })
             tween.easing(TWEEN.Easing.Exponential.InOut)
             tween.to({ x: 0, y: 0, z: 10 }, 1500)
             scene.add(model);
