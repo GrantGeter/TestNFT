@@ -9,7 +9,7 @@ const params = {
 };
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
+const camera;
 const canvasDom = document.getElementById('canvas');
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvasDom })
 const controls = new OrbitControls(camera, renderer.domElement)
@@ -20,6 +20,7 @@ const loading = document.getElementsByClassName('loading')[0];
 let model;
 
 const init = () => {
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
 
     scene.background = new THREE.Color(params.color);
 
