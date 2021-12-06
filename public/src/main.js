@@ -9,20 +9,18 @@ const params = {
 };
 
 const scene = new THREE.Scene();
-let camera;
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
 const canvasDom = document.getElementById('canvas');
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvasDom })
-let controls;
-let tween;
+const controls = new OrbitControls(camera, renderer.domElement)
+const tween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z });
 
 const loading = document.getElementsByClassName('loading')[0];
 
 let model;
 
 const init = () => {
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
-    controls = new OrbitControls(camera, renderer.domElement);
-    tween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z });
+
     scene.background = new THREE.Color(params.color);
 
     renderer.setSize(window.innerWidth, window.innerHeight)
