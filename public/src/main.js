@@ -113,7 +113,9 @@ const render = () => {
 
 animate();
 
-window.onload(init);
+window.onload = (event) => {
+    init();
+};
 
 export {
     scene,
