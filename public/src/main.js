@@ -8,8 +8,6 @@ const params = {
     color: '#f0f0f0'
 };
 
-window.onload(init)
-
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
 const canvasDom = document.getElementById('canvas');
@@ -114,6 +112,8 @@ const render = () => {
 }
 
 animate();
+
+window.onload(init);
 
 export {
     scene,
