@@ -28,7 +28,7 @@ router.get('/kekexplode', function (req, res) {
     res.sendFile(__dirname + '/public/kekehtml/kekexplode.html')
 })
 
-router.get('/slimthugcoin', function (req, res) {
+router.get('/kekegoldcoin', function (req, res) {
     res.sendFile(__dirname + '/public/kekehtml/kekegoldcoin.html')
 })
 
