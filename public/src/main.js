@@ -18,6 +18,11 @@ const tween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: c
 const loading = document.getElementsByClassName('loading')[0];
 const canvasContainer = document.getElementById('canvasContainer');
 
+const dataDiv = document.getElementById('glbPath')
+
+const glbPath = dataDiv.getAttribute('data-glbPath');
+const lightSetting = dataDiv.getAttribute('data-light');
+
 let model;
 
 const init = () => {
@@ -33,7 +38,7 @@ const init = () => {
 
     const loader = new GLTFLoader();
     loader.load(
-        '../assets/centered slim gold coin mods.glb',
+        glbPath,
         (gltf) => {
             model = gltf.scene
             tween.easing(TWEEN.Easing.Exponential.InOut)
@@ -59,9 +64,17 @@ const init = () => {
 
 
 const addLights = () => {
-    const light1 = new THREE.PointLight(0x404040, 125);
-    const light2 = new THREE.PointLight(0x404040, 175);
-    const light3 = new THREE.PointLight(0x404040, 200);
+    let light1, light2, light3;
+
+    if (lightSetting == "record") {
+        light1 = new THREE.PointLight(0x404040, 2.5);
+        light2 = new THREE.PointLight(0x404040, 5);
+        light3 = new THREE.PointLight(0x404040, 10);
+    } else {
+        light1 = new THREE.PointLight(0x404040, 125);
+        light2 = new THREE.PointLight(0x404040, 175);
+        light3 = new THREE.PointLight(0x404040, 200);
+    }
 
     const lightHelper1 = new THREE.PointLightHelper(light1, 1, 0xff0000);
     const lightHelper2 = new THREE.PointLightHelper(light2, 1, 0x00ff00);
