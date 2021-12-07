@@ -5,8 +5,6 @@ const cors = require('cors');
 const path = require('path')
 const port = process.env.PORT || 50080
 
-let glbpath = "";
-
 router.get('/kekeblue', function (req, res) {
     res.sendFile(__dirname + '/public/kekeblue.html')
 })
