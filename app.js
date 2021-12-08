@@ -1,5 +1,8 @@
 const express = require('express')
 const router = express.Router();
+const vinylRouter = express.Router();
+const coinRouter = express.Router();
+
 const app = express()
 const cors = require('cors');
 const path = require('path')
@@ -8,53 +11,57 @@ const port = process.env.PORT || 50080
 
 //KEKE
 
-router.get('/kekeblue', function (req, res) {
+app.use('/vinyls', vinylRouter);
+app.use('/coins', coinRouter);
+
+vinylRouter.get('/kekeblue', function (req, res) {
+    console.log(__dirname);
     res.sendFile(__dirname + '/public/kekehtml/kekeblue.html')
 })
 
-router.get('/kekegreen', function (req, res) {
+vinylRouter.get('/kekegreen', function (req, res) {
     res.sendFile(__dirname + '/public/kekehtml/kekegreen.html')
 })
 
-router.get('/kekehoney', function (req, res) {
+vinylRouter.get('/kekehoney', function (req, res) {
     res.sendFile(__dirname + '/public/kekehtml/kekehoney.html')
 })
 
-router.get('/kekeredmarble', function (req, res) {
+vinylRouter.get('/kekeredmarble', function (req, res) {
     res.sendFile(__dirname + '/public/kekehtml/kekeredmarble.html')
 })
 
-router.get('/kekexplode', function (req, res) {
+vinylRouter.get('/kekexplode', function (req, res) {
     res.sendFile(__dirname + '/public/kekehtml/kekexplode.html')
 })
 
-router.get('/kekegoldcoin', function (req, res) {
+coinRouter.get('/kekegoldcoin', function (req, res) {
     res.sendFile(__dirname + '/public/kekehtml/kekegoldcoin.html')
 })
 
 //Slim
 
-router.get('/slimdarkblue', function (req, res) {
+vinylRouter.get('/slimdarkblue', function (req, res) {
     res.sendFile(__dirname + '/public/slimhtml/slimdarkblue.html')
 })
 
-router.get('/slimbluemarble', function (req, res) {
+vinylRouter.get('/slimbluemarble', function (req, res) {
     res.sendFile(__dirname + '/public/slimhtml/slimbluemarble.html')
 })
 
-router.get('/slimdarkred', function (req, res) {
+vinylRouter.get('/slimdarkred', function (req, res) {
     res.sendFile(__dirname + '/public/slimhtml/slimdarkred.html')
 })
 
-router.get('/slimflower', function (req, res) {
+vinylRouter.get('/slimflower', function (req, res) {
     res.sendFile(__dirname + '/public/slimhtml/slimflower.html')
 })
 
-router.get('/slimsplitcreamy', function (req, res) {
+vinylRouter.get('/slimsplitcreamy', function (req, res) {
     res.sendFile(__dirname + '/public/slimhtml/slimsplitcreamy.html')
 })
 
-router.get('/slimgoldcoin', function (req, res) {
+coinRouter.get('/slimgoldcoin', function (req, res) {
     res.sendFile(__dirname + '/public/slimhtml/slimgoldcoin.html')
 })
 

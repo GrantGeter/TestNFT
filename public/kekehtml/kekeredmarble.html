@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <title>Slim Thug Coin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <script type="importmap">
         {
           "imports": {
-            "three": "./build/three.module.js",
-            "three/examples/jsm/controls/OrbitControls":"./jsm/controls/OrbitControls.js",
-            "three/examples/jsm/libs/stats.module":"./jsm/libs/stats.module.js",
-            "three/examples/jsm/libs/dat.gui.module":"./jsm/libs/dat.gui.module.js",
-            "three/examples/jsm/loaders/GLTFLoader":"./jsm/loaders/GLTFLoader.js",
-            "three/examples/jsm/libs/tween.module.min":"./jsm/libs/tween.module.min.js"
+            "three": "../build/three.module.js",
+            "three/examples/jsm/controls/OrbitControls":"../jsm/controls/OrbitControls.js",
+            "three/examples/jsm/libs/stats.module":"../jsm/libs/stats.module.js",
+            "three/examples/jsm/libs/dat.gui.module":"../jsm/libs/dat.gui.module.js",
+            "three/examples/jsm/loaders/GLTFLoader":"../jsm/loaders/GLTFLoader.js",
+            "three/examples/jsm/libs/tween.module.min":"../jsm/libs/tween.module.min.js"
           }
         }
     </script>
@@ -22,16 +22,16 @@
 
 <body>
     <!-- Prod -->
-    <script type="module" src="./dist/main.js"></script>
+    <script type="module" src="../dist/main.js"></script>
     <!-- Dev -->
     <!-- <script type="module" src="./src/index.js"></script> -->
     <div id="glbPath" data-glbPath="../assets/Lil keke GLBs/keke red marble.glb" data-light="record"></div>
     <div id="canvasContainer" class="hidden">
         <div id="overlay">
-            <img src="./assets/sosouthlogocenter.png" id="openSettings" />
+            <img src="../assets/sosouthlogocenter.png" id="openSettings" />
         </div>
         <div class="loading active">
-            <img src="./assets/loading screen2.gif" id="loadingImg" />
+            <img src="../assets/loading screen2.gif" id="loadingImg" />
         </div>
         <div class="colors">
             <button class="color" id="cadffff"></button>
@@ -48,7 +48,7 @@
         <button class="reset">&#8635;</button>
         <canvas id="canvas"></canvas>
     </div>
-    <script type="module" src="./src/ui.js"></script>
+    <script type="module" src="../src/ui.js"></script>
 </body>
 
 </html>
