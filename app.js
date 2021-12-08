@@ -103,7 +103,7 @@ metadataRouter.get('/slimdarkblue', function (req, res) {
         "image": "https://nfttesttest.herokuapp.com/assets/Lil keke GLBs/ Keke Blue.jpeg",
         "description": "PLACEHOLDER",
         "name": "TestItem",
-        "animation_url": "https://nfttesttest.herokuapp.com/vinyls/slimdarkblue"
+        "animation_url": "https://nfttesttest.herokuapp.com/vinyls/kekeblue"
     }
     res.setHeader('content-type', 'application/json');
     res.send(JSON.stringify(data));
