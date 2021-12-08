@@ -7,7 +7,7 @@ const metadataRouter = express.Router();
 const app = express()
 const cors = require('cors');
 const path = require('path')
-const port = process.env.PORT || 50080
+const port = process.env.PORT || 443
 
 
 //KEKE
@@ -72,27 +72,57 @@ coinRouter.get('/slimgoldcoin', function (req, res) {
 //KEKE Metadata
 
 metadataRouter.get('/kekeblue', function (req, res) {
-    res.sendFile(__dirname + '/metadata/kekeblue')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/kekegreen', function (req, res) {
-    res.sendFile(__dirname + '/metadata/kekegreen')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/kekehoney', function (req, res) {
-    res.sendFile(__dirname + '/metadata/kekehoney')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/kekeredmarble', function (req, res) {
-    res.sendFile(__dirname + '/metadata/kekeredmarble')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/kekexplode', function (req, res) {
-    res.sendFile(__dirname + '/metadata/kekexplode')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/kekegoldcoin', function (req, res) {
-    res.sendFile(__dirname + '/metadata/kekegoldcoin')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 //Slim Metadata
@@ -109,23 +139,48 @@ metadataRouter.get('/slimdarkblue', function (req, res) {
 })
 
 metadataRouter.get('/slimbluemarble', function (req, res) {
-    res.sendFile(__dirname + '/metadata/slimbluemarble')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/slimdarkred', function (req, res) {
-    res.sendFile(__dirname + '/metadata/slimdarkred')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/slimflower', function (req, res) {
-    res.sendFile(__dirname + '/metadata/slimflower')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/slimsplitcreamy', function (req, res) {
-    res.sendFile(__dirname + '/metadata/slimsplitcreamy')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 metadataRouter.get('/slimgoldcoin', function (req, res) {
-    res.sendFile(__dirname + '/metadata/slimgoldcoin')
+    const data = {
+        "image": "",
+        "description": "",
+        "name": "",
+        "animation_url": ""
+    }
 })
 
 app.use(router);
