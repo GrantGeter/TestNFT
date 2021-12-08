@@ -1,4 +1,5 @@
 const express = require('express')
+const https = require('https');
 const router = express.Router();
 const vinylRouter = express.Router();
 const coinRouter = express.Router();
@@ -7,7 +8,16 @@ const metadataRouter = express.Router();
 const app = express()
 const cors = require('cors');
 const path = require('path')
-const port = process.env.PORT || 443
+const port = process.env.PORT || 50080
+
+const fs = require('fs');
+let key = fs.readFileSync('~/ssl/keys/b5419_7ce61_30ea6a770dabf934616b32bd96c60c36.key');
+let cert = fs.readFileSync('~/ssl/certs/sosouth_net_b5419_7ce61_1670361047_f91fe933779ba1cc56ccb639c0abf52c.crt');
+
+const options = {
+    key: key,
+    cert: cert
+}
 
 
 //KEKE
@@ -191,6 +201,8 @@ app.use(express.static(__dirname + '/public'))
 app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));
 app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
 
-app.listen(port, () =>
+const server = https.createServer(options, app)
+
+server.listen(port, () =>
     console.log('Up and running on port' + port)
 );
