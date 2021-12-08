@@ -11,8 +11,8 @@ const path = require('path')
 const port = process.env.PORT || 50080
 
 const fs = require('fs');
-let key = fs.readFileSync('../../../../ssl/keys/b5419_7ce61_30ea6a770dabf934616b32bd96c60c36.key');
-let cert = fs.readFileSync('../../../../ssl/certs/sosouth_net_b5419_7ce61_1670361047_f91fe933779ba1cc56ccb639c0abf52c.crt');
+let key = fs.readFileSync('../../../../ssl/keys/e3515_3fb53_59c43628211315f24e00189a013fc591.key');
+let cert = fs.readFileSync('../../../../ssl/certs/sosouth_net_e3515_3fb53_1673189862_f30cefc6b75bdbef9da2e8107ac23997.crt');
 
 const options = {
     key: key,
