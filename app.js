@@ -105,6 +105,7 @@ metadataRouter.get('/slimdarkblue', function (req, res) {
         "name": "TestItem",
         "animation_url": "sosouth.net:50080/vinyls/slimdarkblue"
     }
+    res.setHeader('content-type', 'application/json');
     res.send(JSON.stringify(data));
 })
 
