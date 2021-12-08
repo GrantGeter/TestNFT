@@ -100,7 +100,7 @@ metadataRouter.get('/kekegoldcoin', function (req, res) {
 metadataRouter.get('/slimdarkblue', function (req, res) {
     // res.sendFile(__dirname + '/metadata/slimdarkblue')
     const data = {
-        "image": "../public/assets/Slim Thug GLBs/Slim Thug JPGs/Slim Thug Dark Blues.jpeg",
+        "image": __dirname + "/public/assets/Slim Thug GLBs/Slim Thug JPGs/Slim Thug Dark Blues.jpeg",
         "description": "PLACEHOLDER",
         "name": "TestItem",
         "animation_url": "http://sosouth.net:50080/vinyls/slimdarkblue"
