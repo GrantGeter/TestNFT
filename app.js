@@ -85,7 +85,7 @@ metadataRouter.get('/kekeblue', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeBlue.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Keke Blue",
         "animation_url": "https://sosouth.net:50080/vinyls/kekeblue"
     }
     res.send(data);
@@ -95,7 +95,7 @@ metadataRouter.get('/kekegreen', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeGreens.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Keke Green",
         "animation_url": "https://sosouth.net:50080/vinyls/kekegreen"
     }
     res.send(data);
@@ -105,7 +105,7 @@ metadataRouter.get('/kekehoney', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeHoney.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Keke Honey",
         "animation_url": "https://sosouth.net:50080/vinyls/kekehoney"
     }
     res.send(data);
@@ -115,7 +115,7 @@ metadataRouter.get('/kekeredmarble', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeRedMarble.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Keke Red Marble",
         "animation_url": "https://sosouth.net:50080/vinyls/kekeredmarble"
     }
     res.send(data);
@@ -125,7 +125,7 @@ metadataRouter.get('/kekexplode', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/Kekexplode.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Keke Explode",
         "animation_url": "https://sosouth.net:50080/vinyls/kekexplode"
     }
     res.send(data);
@@ -147,7 +147,7 @@ metadataRouter.get('/slimdarkblue', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/SlimThugDarkBlues.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Slim Dark Blue",
         "animation_url": "https://sosouth.net:50080/vinyls/slimdarkblue"
     }
     res.send(data);
@@ -157,7 +157,7 @@ metadataRouter.get('/slimbluemarble', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/slimthugbluemarble.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Slim Blue Marble",
         "animation_url": "https://sosouth.net:50080/vinyls/slimbluemarble"
     }
     res.send(data);
@@ -167,7 +167,7 @@ metadataRouter.get('/slimdarkred', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/slimthugdarkred.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Slim Dark Red",
         "animation_url": "https://sosouth.net:50080/vinyls/slimdarkred"
     }
     res.send(data);
@@ -177,7 +177,7 @@ metadataRouter.get('/slimflower', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/SlimThugFlowers.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Slim Flower",
         "animation_url": "https://sosouth.net:50080/vinyls/slimflower"
     }
     res.send(data);
@@ -187,7 +187,7 @@ metadataRouter.get('/slimsplitcreamy', function (req, res) {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/slimthugsplitcreamy.jpeg",
         "description": "Placeholder",
-        "name": "Test Item",
+        "name": "Test Slim Split Creamy",
         "animation_url": "https://sosouth.net:50080/vinyls/slimsplitcreamy"
     }
     res.send(data);
