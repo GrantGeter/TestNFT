@@ -100,7 +100,7 @@ metadataRouter.get('/kekegoldcoin', function (req, res) {
 metadataRouter.get('/slimdarkblue', function (req, res) {
     // res.sendFile(__dirname + '/metadata/slimdarkblue')
     const data = {
-        "image": "https://nfttesttest.herokuapp.com/assets/Lil keke GLBs/ Keke Blue.jpeg",
+        "image": "https://nfttesttest.herokuapp.com/assets/LilkekeGLBs/KekeBlue.jpeg",
         "description": "PLACEHOLDER",
         "name": "TestItem",
         "animation_url": "https://nfttesttest.herokuapp.com/vinyls/kekeblue"
