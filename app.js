@@ -103,7 +103,7 @@ metadataRouter.get('/slimdarkblue', function (req, res) {
         "image": "../public/assets/Slim Thug GLBs/Slim Thug JPGs/Slim Thug Dark Blues.jpeg",
         "description": "PLACEHOLDER",
         "name": "TestItem",
-        "animation_url": "sosouth.net:50080/vinyls/slimdarkblue"
+        "animation_url": "http://sosouth.net:50080/vinyls/slimdarkblue"
     }
     res.setHeader('content-type', 'application/json');
     res.send(JSON.stringify(data));
