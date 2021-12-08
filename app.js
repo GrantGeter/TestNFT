@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const vinylRouter = express.Router();
 const coinRouter = express.Router();
+const metadataRouter = express.Router();
 
 const app = express()
 const cors = require('cors');
@@ -14,8 +15,11 @@ const port = process.env.PORT || 50080
 app.use('/vinyls', vinylRouter);
 app.use('/coins', coinRouter);
 
+vinylRouter.use('/metadata', metadataRouter);
+coinRouter.use('/metadata', metadataRouter);
+
+
 vinylRouter.get('/kekeblue', function (req, res) {
-    console.log(__dirname);
     res.sendFile(__dirname + '/public/kekehtml/kekeblue.html')
 })
 
@@ -63,6 +67,65 @@ vinylRouter.get('/slimsplitcreamy', function (req, res) {
 
 coinRouter.get('/slimgoldcoin', function (req, res) {
     res.sendFile(__dirname + '/public/slimhtml/slimgoldcoin.html')
+})
+
+//KEKE Metadata
+
+metadataRouter.get('/kekeblue', function (req, res) {
+    res.sendFile(__dirname + '/metadata/kekeblue')
+})
+
+metadataRouter.get('/kekegreen', function (req, res) {
+    res.sendFile(__dirname + '/metadata/kekegreen')
+})
+
+metadataRouter.get('/kekehoney', function (req, res) {
+    res.sendFile(__dirname + '/metadata/kekehoney')
+})
+
+metadataRouter.get('/kekeredmarble', function (req, res) {
+    res.sendFile(__dirname + '/metadata/kekeredmarble')
+})
+
+metadataRouter.get('/kekexplode', function (req, res) {
+    res.sendFile(__dirname + '/metadata/kekexplode')
+})
+
+metadataRouter.get('/kekegoldcoin', function (req, res) {
+    res.sendFile(__dirname + '/metadata/kekegoldcoin')
+})
+
+//Slim Metadata
+
+metadataRouter.get('/slimdarkblue', function (req, res) {
+    // res.sendFile(__dirname + '/metadata/slimdarkblue')
+    const data = {
+        "image": "../public/assets/Slim Thug GLBs/Slim Thug JPGs/Slim Thug Dark Blues.jpeg",
+        "description": "PLACEHOLDER",
+        "name": "TestItem",
+        "animation_url": "sosouth.net:50080/vinyls/slimdarkblue"
+    }
+    res.send(JSON.stringify(data));
+})
+
+metadataRouter.get('/slimbluemarble', function (req, res) {
+    res.sendFile(__dirname + '/metadata/slimbluemarble')
+})
+
+metadataRouter.get('/slimdarkred', function (req, res) {
+    res.sendFile(__dirname + '/metadata/slimdarkred')
+})
+
+metadataRouter.get('/slimflower', function (req, res) {
+    res.sendFile(__dirname + '/metadata/slimflower')
+})
+
+metadataRouter.get('/slimsplitcreamy', function (req, res) {
+    res.sendFile(__dirname + '/metadata/slimsplitcreamy')
+})
+
+metadataRouter.get('/slimgoldcoin', function (req, res) {
+    res.sendFile(__dirname + '/metadata/slimgoldcoin')
 })
 
 app.use(router);
