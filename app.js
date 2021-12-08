@@ -83,7 +83,7 @@ coinRouter.get('/slimgoldcoin', function (req, res) {
 
 metadataRouter.get('/kekeblue', function (req, res) {
     const data = {
-        "image": "https://sosouth.net:50080/assets/LilkekeGLBs/KekeBlue.jpeg",
+        "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeBlue.jpeg",
         "description": "Placeholder",
         "name": "Test Item",
         "animation_url": "https://sosouth.net:50080/vinyls/kekeblue"
