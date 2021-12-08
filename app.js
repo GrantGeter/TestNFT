@@ -88,6 +88,7 @@ metadataRouter.get('/kekeblue', function (req, res) {
         "name": "Test Item",
         "animation_url": "https://sosouth.net:50080/vinyls/kekeblue"
     }
+    res.send(data);
 })
 
 metadataRouter.get('/kekegreen', function (req, res) {
