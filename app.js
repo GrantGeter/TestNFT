@@ -81,51 +81,56 @@ coinRouter.get('/slimgoldcoin', function (req, res) {
 
 //KEKE Metadata
 
-metadataRouter.get('/kekeblue', function (req, res) {
+metadataRouter.get('/kekeblue:tokenId', function (req, res) {
+    const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeBlue.jpeg",
         "description": "Placeholder",
-        "name": "Test Keke Blue",
+        "name": "Test Keke Blue #" + id,
         "animation_url": "https://sosouth.net:50080/vinyls/kekeblue"
     }
     res.send(data);
 })
 
-metadataRouter.get('/kekegreen', function (req, res) {
+metadataRouter.get('/kekegreen:tokenId', function (req, res) {
+    const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeGreens.jpeg",
         "description": "Placeholder",
-        "name": "Test Keke Green",
+        "name": "Test Keke Green #" + id,
         "animation_url": "https://sosouth.net:50080/vinyls/kekegreen"
     }
     res.send(data);
 })
 
-metadataRouter.get('/kekehoney', function (req, res) {
+metadataRouter.get('/kekehoney:tokenId', function (req, res) {
+    const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeHoney.jpeg",
         "description": "Placeholder",
-        "name": "Test Keke Honey",
+        "name": "Test Keke Honey #" + id,
         "animation_url": "https://sosouth.net:50080/vinyls/kekehoney"
     }
     res.send(data);
 })
 
-metadataRouter.get('/kekeredmarble', function (req, res) {
+metadataRouter.get('/kekeredmarble:tokenId', function (req, res) {
+    const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeRedMarble.jpeg",
         "description": "Placeholder",
-        "name": "Test Keke Red Marble",
+        "name": "Test Keke Red Marble #" + id,
         "animation_url": "https://sosouth.net:50080/vinyls/kekeredmarble"
     }
     res.send(data);
 })
 
-metadataRouter.get('/kekexplode', function (req, res) {
+metadataRouter.get('/kekexplode:tokenId', function (req, res) {
+    const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/Kekexplode.jpeg",
         "description": "Placeholder",
-        "name": "Test Keke Explode",
+        "name": "Test Keke Explode #" + id,
         "animation_url": "https://sosouth.net:50080/vinyls/kekexplode"
     }
     res.send(data);
