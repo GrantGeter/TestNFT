@@ -81,7 +81,7 @@ coinRouter.get('/slimgoldcoin', function (req, res) {
 
 //KEKE Metadata
 
-metadataRouter.get('/kekeblue:tokenId', function (req, res) {
+metadataRouter.get('/kekeblue/:tokenId', function (req, res) {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeBlue.jpeg",
@@ -92,7 +92,7 @@ metadataRouter.get('/kekeblue:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekegreen:tokenId', function (req, res) {
+metadataRouter.get('/kekegreen/:tokenId', function (req, res) {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeGreens.jpeg",
@@ -103,7 +103,7 @@ metadataRouter.get('/kekegreen:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekehoney:tokenId', function (req, res) {
+metadataRouter.get('/kekehoney/:tokenId', function (req, res) {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeHoney.jpeg",
@@ -114,7 +114,7 @@ metadataRouter.get('/kekehoney:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekeredmarble:tokenId', function (req, res) {
+metadataRouter.get('/kekeredmarble/:tokenId', function (req, res) {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeRedMarble.jpeg",
@@ -125,7 +125,7 @@ metadataRouter.get('/kekeredmarble:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekexplode:tokenId', function (req, res) {
+metadataRouter.get('/kekexplode/:tokenId', function (req, res) {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/Kekexplode.jpeg",
