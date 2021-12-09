@@ -53,6 +53,10 @@ coinRouter.get('/kekegoldcoin', (req, res) => {
     res.sendFile(__dirname + '/public/kekehtml/kekegoldcoin.html')
 })
 
+coinRouter.get('/goldcoinblank', (req, res) => {
+    res.sendFile(__dirname + '/public/kekehtml/goldcoinblank.html')
+})
+
 //Slim
 
 vinylRouter.get('/slimdarkblue', (req, res) => {
@@ -143,6 +147,17 @@ metadataRouter.get('/kekegoldcoin/:tokenId', (req, res) => {
         "description": "Placeholder",
         "name": "Test Item #" + id,
         "animation_url": "https://sosouth.net:50080/coins/kekegoldcoin"
+    }
+    res.send(data);
+})
+
+metadataRouter.get('/goldcoinblank/:tokenId', (req, res) => {
+    const id = req.params.tokenId;
+    const data = {
+        "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeCoin.jpeg",
+        "description": "Placeholder",
+        "name": "Test Item #" + id,
+        "animation_url": "https://sosouth.net:50080/coins/goldcoinblank"
     }
     res.send(data);
 })
