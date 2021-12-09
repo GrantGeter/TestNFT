@@ -29,59 +29,59 @@ vinylRouter.use('/metadata', metadataRouter);
 coinRouter.use('/metadata', metadataRouter);
 
 
-vinylRouter.get('/kekeblue', function (req, res) {
+vinylRouter.get('/kekeblue', (req, res) => {
     res.sendFile(__dirname + '/public/kekehtml/kekeblue.html')
 })
 
-vinylRouter.get('/kekegreen', function (req, res) {
+vinylRouter.get('/kekegreen', (req, res) => {
     res.sendFile(__dirname + '/public/kekehtml/kekegreen.html')
 })
 
-vinylRouter.get('/kekehoney', function (req, res) {
+vinylRouter.get('/kekehoney', (req, res) => {
     res.sendFile(__dirname + '/public/kekehtml/kekehoney.html')
 })
 
-vinylRouter.get('/kekeredmarble', function (req, res) {
+vinylRouter.get('/kekeredmarble', (req, res) => {
     res.sendFile(__dirname + '/public/kekehtml/kekeredmarble.html')
 })
 
-vinylRouter.get('/kekexplode', function (req, res) {
+vinylRouter.get('/kekexplode', (req, res) => {
     res.sendFile(__dirname + '/public/kekehtml/kekexplode.html')
 })
 
-coinRouter.get('/kekegoldcoin', function (req, res) {
+coinRouter.get('/kekegoldcoin', (req, res) => {
     res.sendFile(__dirname + '/public/kekehtml/kekegoldcoin.html')
 })
 
 //Slim
 
-vinylRouter.get('/slimdarkblue', function (req, res) {
+vinylRouter.get('/slimdarkblue', (req, res) => {
     res.sendFile(__dirname + '/public/slimhtml/slimdarkblue.html')
 })
 
-vinylRouter.get('/slimbluemarble', function (req, res) {
+vinylRouter.get('/slimbluemarble', (req, res) => {
     res.sendFile(__dirname + '/public/slimhtml/slimbluemarble.html')
 })
 
-vinylRouter.get('/slimdarkred', function (req, res) {
+vinylRouter.get('/slimdarkred', (req, res) => {
     res.sendFile(__dirname + '/public/slimhtml/slimdarkred.html')
 })
 
-vinylRouter.get('/slimflower', function (req, res) {
+vinylRouter.get('/slimflower', (req, res) => {
     res.sendFile(__dirname + '/public/slimhtml/slimflower.html')
 })
 
-vinylRouter.get('/slimsplitcreamy', function (req, res) {
+vinylRouter.get('/slimsplitcreamy', (req, res) => {
     res.sendFile(__dirname + '/public/slimhtml/slimsplitcreamy.html')
 })
 
-coinRouter.get('/slimgoldcoin', function (req, res) {
+coinRouter.get('/slimgoldcoin', (req, res) => {
     res.sendFile(__dirname + '/public/slimhtml/slimgoldcoin.html')
 })
 
 //KEKE Metadata
 
-metadataRouter.get('/kekeblue/:tokenId', function (req, res) {
+metadataRouter.get('/kekeblue/:tokenId', (req, res) => {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeBlue.jpeg",
@@ -92,7 +92,7 @@ metadataRouter.get('/kekeblue/:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekegreen/:tokenId', function (req, res) {
+metadataRouter.get('/kekegreen/:tokenId', (req, res) => {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeGreens.jpeg",
@@ -103,7 +103,7 @@ metadataRouter.get('/kekegreen/:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekehoney/:tokenId', function (req, res) {
+metadataRouter.get('/kekehoney/:tokenId', (req, res) => {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeHoney.jpeg",
@@ -114,7 +114,7 @@ metadataRouter.get('/kekehoney/:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekeredmarble/:tokenId', function (req, res) {
+metadataRouter.get('/kekeredmarble/:tokenId', (req, res) => {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeRedMarble.jpeg",
@@ -125,7 +125,7 @@ metadataRouter.get('/kekeredmarble/:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekexplode/:tokenId', function (req, res) {
+metadataRouter.get('/kekexplode/:tokenId', (req, res) => {
     const id = req.params.tokenId;
     const data = {
         "image": "https://sosouth.net:50080/assets/LilkekeJPGs/Kekexplode.jpeg",
@@ -136,19 +136,20 @@ metadataRouter.get('/kekexplode/:tokenId', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/kekegoldcoin', function (req, res) {
-    // const data = {
-    //     "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeBlue.jpeg",
-    //     "description": "Placeholder",
-    //     "name": "Test Item",
-    //     "animation_url": "https://sosouth.net:50080/vinyls/kekegoldcoin"
-    // }
-    // res.send(data);
+metadataRouter.get('/kekegoldcoin/:tokenId', (req, res) => {
+    const id = req.params.tokenId;
+    const data = {
+        "image": "https://sosouth.net:50080/assets/LilkekeJPGs/KekeCoin.jpeg",
+        "description": "Placeholder",
+        "name": "Test Item #" + id,
+        "animation_url": "https://sosouth.net:50080/coins/kekegoldcoin"
+    }
+    res.send(data);
 })
 
 //Slim Metadata
 
-metadataRouter.get('/slimdarkblue', function (req, res) {
+metadataRouter.get('/slimdarkblue', (req, res) => {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/SlimThugDarkBlues.jpeg",
         "description": "Placeholder",
@@ -158,7 +159,7 @@ metadataRouter.get('/slimdarkblue', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/slimbluemarble', function (req, res) {
+metadataRouter.get('/slimbluemarble', (req, res) => {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/slimthugbluemarble.jpeg",
         "description": "Placeholder",
@@ -168,7 +169,7 @@ metadataRouter.get('/slimbluemarble', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/slimdarkred', function (req, res) {
+metadataRouter.get('/slimdarkred', (req, res) => {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/slimthugdarkred.jpeg",
         "description": "Placeholder",
@@ -178,7 +179,7 @@ metadataRouter.get('/slimdarkred', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/slimflower', function (req, res) {
+metadataRouter.get('/slimflower', (req, res) => {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/SlimThugFlowers.jpeg",
         "description": "Placeholder",
@@ -188,7 +189,7 @@ metadataRouter.get('/slimflower', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/slimsplitcreamy', function (req, res) {
+metadataRouter.get('/slimsplitcreamy', (req, res) => {
     const data = {
         "image": "https://sosouth.net:50080/assets/SlimThugJPGs/slimthugsplitcreamy.jpeg",
         "description": "Placeholder",
@@ -198,14 +199,15 @@ metadataRouter.get('/slimsplitcreamy', function (req, res) {
     res.send(data);
 })
 
-metadataRouter.get('/slimgoldcoin', function (req, res) {
-    // const data = {
-    //     "image": "https://sosouth.net:50080/assets/SlimThugJPGs/SlimThugFlowers.jpeg",
-    //     "description": "Placeholder",
-    //     "name": "Test Item",
-    //     "animation_url": "https://sosouth.net:50080/vinyls/slimgoldcoin"
-    // }
-    // res.send(data);
+metadataRouter.get('/slimgoldcoin/:tokenId', (req, res) => {
+    const id = req.params.tokenId;
+    const data = {
+        "image": "https://sosouth.net:50080/assets/SlimThugJPGs/",
+        "description": "Placeholder",
+        "name": "Test Item #" + id,
+        "animation_url": "https://sosouth.net:50080/vinyls/slimgoldcoin"
+    }
+    res.send(data);
 })
 
 app.use(router);
