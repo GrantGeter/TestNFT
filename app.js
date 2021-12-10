@@ -54,7 +54,7 @@ coinRouter.get('/kekegoldcoin', (req, res) => {
 })
 
 coinRouter.get('/goldcoinblank', (req, res) => {
-    res.sendFile(__dirname + '/public/kekehtml/goldcoinblank.html')
+    res.sendFile(__dirname + '/public/kekehtml/kekegoldcoinblank.html')
 })
 
 //Slim
