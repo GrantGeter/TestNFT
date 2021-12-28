@@ -162,7 +162,7 @@ metadataRouter.get('/goldcoinblank/:tokenId', (req, res) => {
     res.set({
         'Content-Type': 'text/plain',
         'charset': 'utf-8'
-    })
+    })``
     res.send(data);
 })
 
