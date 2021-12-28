@@ -159,6 +159,10 @@ metadataRouter.get('/goldcoinblank/:tokenId', (req, res) => {
         "name": "Test Item #" + id,
         "animation_url": "https://sosouth.net:50080/coins/goldcoinblank"
     }
+    res.set({
+        'Content-Type': 'text/plain',
+        'charset': 'utf-8'
+    })
     res.send(data);
 })
 
