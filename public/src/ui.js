@@ -37,10 +37,8 @@ const buttons = document.querySelectorAll('.color')
 
 const setBackgroundColor = (color) => {
     params.color = color
-    // scene.background = new THREE.Color(color);
 }
 
-setBackgroundColor('#f0f0f0');
 buttons.forEach(button => button.addEventListener('click', () => setBackgroundColor(button.id.replace('c', '#'))))
 
 
@@ -88,7 +86,6 @@ const toggleFullscreen = () => {
         } else if (canvasContainer.msRequestFullscreen) { /* IE/Edge */
             canvasContainer.msRequestFullscreen();
         }
-        fullscreen.src = "../assets/minimize.svg"
     } else {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -97,10 +94,23 @@ const toggleFullscreen = () => {
         } else if (document.msExitFullscreen) { /* IE11 */
             document.msExitFullscreen();
         }
+    }
+}
+
+document.addEventListener('fullscreenchange', (event) => {
+    if (document.fullscreenElement) {
+        fullscreen.src = "../assets/minimize.svg"
+        fullscreen.style.width = "1.75rem";
+        fullscreen.style.height = "1.75rem";
+    } else {
         fullscreen.src = "../assets/expand.svg"
+        fullscreen.style.width = "1.5rem";
+        fullscreen.style.height = "1.5rem";
     }
     isFullscreen = !isFullscreen;
-}
+
+});
+
 
 reset.addEventListener('click', resetCamera);
 fullscreen.addEventListener('click', toggleFullscreen);
