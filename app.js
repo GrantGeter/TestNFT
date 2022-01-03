@@ -10,14 +10,14 @@ const cors = require('cors');
 const path = require('path')
 const port = process.env.PORT || 50080
 
-// const fs = require('fs');
-// let key = fs.readFileSync('../../../../ssl/keys/e3515_3fb53_59c43628211315f24e00189a013fc591.key');
-// let cert = fs.readFileSync('../../../../ssl/certs/sosouth_net_e3515_3fb53_1673189862_f30cefc6b75bdbef9da2e8107ac23997.crt');
+const fs = require('fs');
+let key = fs.readFileSync('../../../../ssl/keys/e3515_3fb53_59c43628211315f24e00189a013fc591.key');
+let cert = fs.readFileSync('../../../../ssl/certs/sosouth_net_e3515_3fb53_1673189862_f30cefc6b75bdbef9da2e8107ac23997.crt');
 
-// const options = {
-//     key: key,
-//     cert: cert
-// }
+const options = {
+    key: key,
+    cert: cert
+}
 
 
 //KEKE
@@ -91,8 +91,8 @@ app.use(express.static(__dirname + '/public'))
 app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));
 app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
 
-// const server = https.createServer(options, app)
+const server = https.createServer(options, app)
 
-app.listen(port, () =>
+server.listen(port, () =>
     console.log('Up and running on port' + port)
 );

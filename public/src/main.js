@@ -26,8 +26,10 @@ let model;
 
 const init = () => {
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.gammaOutput = true
+    renderer.gammaOutput = true;
 
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.1;
     controls.maxDistance = 20;
     controls.minDistance = 2;
 
