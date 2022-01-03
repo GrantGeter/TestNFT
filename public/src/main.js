@@ -3,15 +3,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { TWEEN } from 'three/examples/jsm/libs/tween.module.min';
 
-
 const params = {
-    color: '#f0f0f0'
-};
+    color: "#f0f0f0"
+}
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
 const canvasDom = document.getElementById('canvas');
-const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvasDom })
+const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvasDom, alpha: true })
 const controls = new OrbitControls(camera, renderer.domElement)
 const tween = new TWEEN.Tween({ x: camera.position.x, y: camera.position.y, z: camera.position.z });
 
@@ -26,11 +25,7 @@ const lightSetting = dataDiv.getAttribute('data-light');
 let model;
 
 const init = () => {
-
-    scene.background = new THREE.Color(params.color);
-
     renderer.setSize(window.innerWidth, window.innerHeight)
-
     renderer.gammaOutput = true
 
     controls.maxDistance = 20;
@@ -100,10 +95,10 @@ const addLights = () => {
 window.addEventListener(
     'resize',
     () => {
-        camera.aspect = window.innerWidth / window.innerHeight
-        camera.updateProjectionMatrix()
-        renderer.setSize(window.innerWidth, window.innerHeight)
-        render()
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        render();
     },
     false
 )
@@ -119,6 +114,7 @@ const animate = () => {
     TWEEN.update()
     controls.update()
     render()
+    scene.background = new THREE.Color(params.color);
 }
 
 const render = () => {
@@ -136,5 +132,6 @@ export {
     camera,
     controls,
     TWEEN,
-    THREE
+    THREE,
+    params
 }

@@ -1,14 +1,18 @@
-import { camera, controls, scene, TWEEN, THREE } from './main.js';
+import { camera, controls, scene, TWEEN, THREE, params } from './main.js';
 
 let colorSelector = document.getElementsByClassName("colors")[0];
 let reset = document.getElementsByClassName('reset')[0];
 let canvas = document.getElementById('canvas');
+let canvasContainer = document.getElementById('canvasContainer');
+
 
 let settings = document.getElementById("openSettings");
+let fullscreen = document.getElementById("fullscreen");
 
 settings.onclick = () => {
     colorSelector.classList.add('open');
     reset.classList.add('open');
+    fullscreen.classList.add('open');
 
 }
 
@@ -16,6 +20,7 @@ window.onclick = (event) => {
     if (event.target == canvas) {
         colorSelector.classList.remove('open');
         reset.classList.remove('open');
+        fullscreen.classList.remove('open');
     }
 }
 
@@ -23,6 +28,7 @@ window.ontouchend = (event) => {
     if (event.target == canvas) {
         colorSelector.classList.remove('open');
         reset.classList.remove('open');
+        fullscreen.classList.remove('open');
     }
 }
 
@@ -30,9 +36,11 @@ window.ontouchend = (event) => {
 const buttons = document.querySelectorAll('.color')
 
 const setBackgroundColor = (color) => {
-    scene.background = new THREE.Color(color);
+    params.color = color
+    // scene.background = new THREE.Color(color);
 }
 
+setBackgroundColor('#f0f0f0');
 buttons.forEach(button => button.addEventListener('click', () => setBackgroundColor(button.id.replace('c', '#'))))
 
 
@@ -67,4 +75,32 @@ const resetCamera = () => {
     })
 }
 
+let isFullscreen = false;
+
+const toggleFullscreen = () => {
+    if (!isFullscreen) {
+        if (canvasContainer.requestFullscreen) {
+            canvasContainer.requestFullscreen();
+        } else if (canvasContainer.mozRequestFullScreen) { /* Firefox */
+            canvasContainer.mozRequestFullScreen();
+        } else if (canvasContainer.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            canvasContainer.webkitRequestFullscreen();
+        } else if (canvasContainer.msRequestFullscreen) { /* IE/Edge */
+            canvasContainer.msRequestFullscreen();
+        }
+        fullscreen.src = "../assets/minimize.svg"
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+        }
+        fullscreen.src = "../assets/expand.svg"
+    }
+    isFullscreen = !isFullscreen;
+}
+
 reset.addEventListener('click', resetCamera);
+fullscreen.addEventListener('click', toggleFullscreen);

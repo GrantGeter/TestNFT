@@ -5,29 +5,55 @@ body {
 
 .reset {
     position: absolute;
-    font-size: 2.75rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    color: #589fe5;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.5rem;
+    filter: invert(60%) sepia(20%) saturate(1395%) hue-rotate(172deg) brightness(95%) contrast(88%);
     opacity: 0.6;
     z-index: 101;
     top: 8rem;
     right: 0;
-    margin-right: 0.3rem;
+    /* margin-right: 0.3rem; */
     transition: transform 500ms ease-in-out;
     transform: translateX(110%);
     border: none;
     background: none;
 }
 
+#fullscreen {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    filter: invert(60%) sepia(20%) saturate(1395%) hue-rotate(172deg) brightness(95%) contrast(88%);
+    opacity: 0.6;
+    z-index: 101;
+    top: 12rem;
+    right: 0;
+    margin-right: 0.3rem;
+    transition: transform 500ms ease-in-out;
+    transform: translateX(120%);
+    border: none;
+    background: none;
+}
+
 .reset:hover {
-    font-size: 3.5rem;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 3.25rem;
+    height: 3.25rem;
     transition: ease-in-out 100ms;
 }
 
 .reset.open {
+    transform: translateX(0px);
+}
+
+#fullscreen:hover {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: ease-in-out 100ms;
+}
+
+#fullscreen.open {
     transform: translateX(0px);
 }
 
@@ -102,6 +128,7 @@ body {
 #canvas {
     top: 0;
     left: 0;
+    background-color: #589fe5;
 }
 
 .loading {
