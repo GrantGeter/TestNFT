@@ -27,6 +27,7 @@ let model;
 const init = () => {
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.gammaOutput = true;
+    renderer.setPixelRatio(window.devicePixelRatio)
 
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
